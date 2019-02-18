@@ -11,8 +11,8 @@ output: [{start: -Infinity, end: 4, value: true}, {start: 4, end: 6, value: fals
 
 /**
  * Compares two given Range objects. Supports (-Infinity) and Infinity values.
- * @param {Object {start: number, end: number} } a - 1st range to comare 
- * @param {Object {start: number, end: number} } b - 2nd range to comare
+ * @param { Object {start: number, end: number} } a - 1st range to comare 
+ * @param { Object {start: number, end: number} } b - 2nd range to comare
  */
 const compareRanges = (a, b) => {
 	let starts = a.start - b.start;
@@ -29,9 +29,9 @@ const compareRanges = (a, b) => {
 }
 
 /**
- * Smartely inserts Range object into given Range array into proper position.
- * @param {array<Object>} all - Desitnation Array where to add the Range
- * @param {Object {start: number, end: number}} range - Ranage object to add
+ * Smartely inserts Range object into given All Ranges array into proper position.
+ * @param { array<Object> } all - Desitnation Array where to add the Range
+ * @param { Object {start: number, end: number} } range - Ranage object to add
  */
 const addToRanges = (all, range) => {
 	for (let i = 0; i < all.length; i++) {
@@ -48,15 +48,11 @@ const addToRanges = (all, range) => {
 }
 
 /**
- * Impementation: 
- * 1. Sort all ranges, by start value
- * 2. From travers from left to right and add to result only pivoted values
- * 3. return this arrau
- *  
- * @param {*} left 
- * @param {*} right 
+ * Merges given Arrays of Range objects into single object's Array
+ * @param { array<Object> } left - 1st Array of Range objects
+ * @param { array<Object> } right - 2nd Array of Range objects
+ * @returns { array<Object> }
  */
-
 function combineRanges(left, right) {
 	const allRanges = [];
 	if (Array.isArray(left))
